@@ -1,0 +1,38 @@
+{
+  "name": "q-centrix-documentation",
+  "version": "0.0.1",
+  "description": "RAML documentation and gulp tasks for test/http stub files",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/q-centrix/raml-converter.git"
+  },
+  "author": "q-centrix",
+  "license": "see license file",
+  "bugs": {
+    "url": "https://github.com/q-centrix/api-docs/issues"
+  },
+  "homepage": "https://github.com/q-centrix/api-docs",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.5.2",
+    "gulp-data": "^1.2.0",
+    "gulp-debug": "^2.0.1",
+    "gulp-load-plugins": "^0.9.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-raml": "^0.1.3",
+    "gulp-template": "^3.0.0",
+    "gulp-util": "^3.0.4",
+    "gulp-yaml": "^0.2.4",
+    "js-yaml": "^3.2.7",
+    "raml2html": "^1.6.0",
+    "through2": "^0.6.3"
+  },
+  "devDependencies": {
+    "gulp-load-plugins": "^0.9.0",
+    "require-dir": "^0.3.0"
+  }
+}
