@@ -1,2 +1,4 @@
-$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+LIB_FOLDER = File.expand_path('../../lib/textualize', __FILE__)
+$LOAD_PATH.unshift LIB_FOLDER
+
 require 'textualize'
