@@ -18,7 +18,7 @@ module Textualize
 ♪┏(°.°)┛┗(°.°)┓┗(°.°)┛┏(°.°)┓┏(°.°)┛┗(°.°)┓┗(°.°)┛┏(°.°)┓♪
 
 Thank you for installing textualize, please finish setting up your
-project with: `cd #{app_open_struct.name} && npm install`
+project with: `cd #{app_name} && npm install`
 
 In your new folder you can now use the following commands:
 
@@ -31,6 +31,12 @@ Each command depends on gulp being installed.
 
 ♪┏(°.°)┛┗(°.°)┓┗(°.°)┛┏(°.°)┓┏(°.°)┛┗(°.°)┓┗(°.°)┛┏(°.°)┓♪
       POST_INSTALL_MESSAGE
+    end
+
+    private
+
+    def lib_directory
+      __dir__.chomp('/tasks')
     end
 
   end
