@@ -1,10 +1,9 @@
 require_relative '../spec_helper'
-require LIB_FOLDER + '/transformers/two_hundred'
 
 describe Textualize::TwoHundred do
   subject { described_class.new(response: response) }
 
-  describe 'converts a 200 request with a body into a common struct' do
+  describe 'converts a 200 request with a body into a common hash' do
     let(:response) do
       {
         '200': {

@@ -1,4 +1,5 @@
-LIB_FOLDER = File.expand_path('../../lib/textualize', __FILE__)
-$LOAD_PATH.unshift LIB_FOLDER
+require 'thor'
 
-require 'textualize'
+LIB_FOLDER = File.expand_path('../../lib', __FILE__)
+
+Dir.glob(LIB_FOLDER + '/**/*.rb').each { |file| require file }
