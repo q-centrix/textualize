@@ -12,23 +12,66 @@ Add this line to your application's Gemfile:
 gem 'textualize'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install textualize
-
 ## Usage
 
-TODO: Write usage instructions here
+Textualize comes with the following generators:
+
+### New
+
+```bash
+textualize new <folder-name>
+```
+
+The ``textualize new`` command creates sample documentation with the folder
+structure needed for the other commands.
+
+### Server
+
+```bash
+textualize server
+```
+
+The ``textualize server`` command creates a folder structure of JSON in the
+``server`` folder.
+
+### Request Specs
+
+```bash
+textualize request_specs
+```
+
+The ``textualize request_specs`` command creates a folder of request specs
+using [rack-test](https://github.com/brynary/rack-test) and
+[rspec](https://github.com/rspec/rspec).
+
+### Seeds
+
+```bash
+textualize seeeds
+```
+
+The ``textualize seeds`` command creates a file that can be used as the
+``db/seeds.rb`` file in a rails app. It depends on ActiveRecord.
+
+### Factories
+
+```bash
+textualize factories
+```
+
+The ``textualize factories`` command creates a folder of Angular JS factories
+namespaced to a ``factories`` module and written in Typescript.
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run
+`bin/console` for an interactive prompt that will allow you to experiment.
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+To install this gem onto your local machine, run `bundle exec rake install`. To
+release a new version, update the version number in `version.rb`, and then run
+`bundle exec rake release` to create a git tag for the version, push git
+commits and tags, and push the `.gem` file to
+[rubygems.org](https://rubygems.org).
 
 ## Contributing
 
