@@ -1,7 +1,7 @@
 require_relative '../spec_helper'
 
 describe Textualize::TwoHundred do
-  subject { described_class.new(response: response) }
+  subject { described_class.new(response) }
 
   describe 'converts a 200 request with a body into a common hash' do
     let(:response) do

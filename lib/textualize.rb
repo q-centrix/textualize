@@ -1,4 +1,5 @@
 require 'thor'
+require 'attr_extras'
 Dir["#{__dir__}/**/*.rb"].each { |f| require f }
 
 module Textualize

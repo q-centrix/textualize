@@ -21,8 +21,9 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'thor',   '~> 0'
-  spec.add_runtime_dependency 'hashie', '~> 3'
+  spec.add_runtime_dependency 'thor',        '~> 0'
+  spec.add_runtime_dependency 'attr_extras', '~> 4'
+  spec.add_runtime_dependency 'hashie',      '~> 3'
 
   spec.add_development_dependency 'aruba',   '~> 0'
   spec.add_development_dependency 'byebug',  '~> 3'

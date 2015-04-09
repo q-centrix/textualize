@@ -1,4 +1,5 @@
 require 'thor'
+require 'attr_extras'
 
 LIB_FOLDER = File.expand_path('../../lib', __FILE__)
 
