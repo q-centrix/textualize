@@ -27,7 +27,8 @@ In your new folder you can now use the following commands:
 * textualize seeds
 * textualize factories
 
-Each command depends on gulp being installed.
+Each command depends on gulp being installed. Please install gulp globally with
+``npm install -g gulp`` and locally with ``npm install``.
 
 ♪┏(°.°)┛┗(°.°)┓┗(°.°)┛┏(°.°)┓┏(°.°)┛┗(°.°)┓┗(°.°)┛┏(°.°)┓♪
       POST_INSTALL_MESSAGE
