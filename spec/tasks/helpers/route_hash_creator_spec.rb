@@ -3,7 +3,7 @@ require_relative '../../spec_helper'
 describe Textualize::RouteHashCreator do
   subject { described_class.new(json_from_gulp_task) }
 
-  describe 'converts get resource into simpler hash' do
+  describe 'GET request' do
     let(:json_from_gulp_task) do
       {
         "baseUri": "api/v1",
@@ -45,7 +45,7 @@ describe Textualize::RouteHashCreator do
       }
     end
 
-    specify do
+    it 'converts into simpler hash' do
       expect(subject.create_route_hashes).to eq [
         {
           url: 'api/v1/facility',
@@ -55,6 +55,5 @@ describe Textualize::RouteHashCreator do
         }
       ]
     end
-
   end
 end

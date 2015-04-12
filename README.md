@@ -24,6 +24,7 @@ textualize new <folder-name>
 The ``textualize new`` command creates sample documentation with the folder
 structure needed for the other commands.
 
+## TODO Tasks
 ### Server
 
 ```bash
@@ -52,14 +53,15 @@ textualize seeeds
 The ``textualize seeds`` command creates a file that can be used as the
 ``db/seeds.rb`` file in a rails app. It depends on ActiveRecord.
 
-### Factories
+### Angular Factories
 
 ```bash
-textualize factories
+textualize angular_factories
 ```
 
-The ``textualize factories`` command creates a folder of Angular JS factories
-namespaced to a ``factories`` module and written in Typescript.
+The ``textualize angular_factories`` command creates a folder of Angular JS
+factories namespaced to a ``angular_factories`` module and written in
+Typescript.
 
 ## Development
 
