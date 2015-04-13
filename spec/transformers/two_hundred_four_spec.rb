@@ -6,8 +6,8 @@ describe Textualize::TwoHundredFour do
   describe 'converts a 204 request with a body into a common hash' do
     let(:response) do
       {
-        '204': {
-          'description': 'Success (no body)'
+        '204' => {
+          'description' => 'Success (no body)'
         }
       }
     end

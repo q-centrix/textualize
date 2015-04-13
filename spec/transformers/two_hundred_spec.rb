@@ -6,10 +6,10 @@ describe Textualize::TwoHundred do
   describe 'converts a 200 request with a body into a common hash' do
     let(:response) do
       {
-        '200': {
-          'body': {
-            'application/json': {
-              'example': '{\n  "arbitrary": \n "json" }\n'
+        '200' => {
+          'body' => {
+            'application/json' => {
+              'example' => '{\n  "arbitrary": \n "json" }\n'
             }
           }
         }

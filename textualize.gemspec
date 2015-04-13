@@ -9,16 +9,21 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Q-Centrix Dev Team']
   spec.email         = ['devjobs@q-centrix.com']
 
-  spec.summary       = %q{Turn Documentation into Tests and More}
-  spec.description   = %q{Textualize currently supports converting RAML
-  documentation into rack-test request specs, angular js factories, and rails
-  seeding}
-  spec.homepage      = 'https://github.com/q-centrix/textualize'
-  spec.license       = 'MIT'
+  spec.summary       = 'Turn Documentation into Tests and More'
+  spec.description   = <<-DESCRIPTION
+    Textualize currently supports converting RAML documentation into rack-test
+    request specs, angular js factories, and rails seeding
+  DESCRIPTION
 
-  spec.files         = `git ls-files -z`.split('\x0').reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
-  spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.homepage      = 'https://github.com/q-centrix/textualize'
+  spec.license       = 'Proprietary'
+
+  spec.files         = `git ls-files`.split("\n").reject do |file|
+    file.match(%r{^(test|spec|features)/})
+  end
+  spec.executables   = spec.files.grep(%r{^bin/}) do |file|
+    File.basename(file)
+  end
   spec.require_paths = ['lib']
 
   spec.add_runtime_dependency 'thor',        '~> 0'
