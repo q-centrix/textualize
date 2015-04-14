@@ -33,6 +33,18 @@ textualize server
 The ``textualize server`` command creates a folder structure of JSON in the
 ``server`` folder.
 
+### HttpBackend
+
+```bash
+textualize http_backend
+```
+
+The ``textualize http_backend`` command creates a minified javascript file,
+``angular/textualize_http_backend.min.js`` that contains an angular module that
+can be injected to provide a stubbed
+[httpBackend](https://docs.angularjs.org/api/ngMockE2E/service/$httpBackend).
+This can be used in both e2e tests and for prototyping.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run

@@ -10,7 +10,7 @@ module Textualize
     )
 
     def create_method_files
-      route_hashes.each do |route_hash|
+      RouteHashes.hashes.each do |route_hash|
         next if route_hash.body.empty?
 
         route_directory = "#{dist_dir}#{route_hash.url}"
@@ -24,14 +24,6 @@ module Textualize
     end
 
     private
-
-    def route_hashes
-      Dir.glob('.tmp/apis/*.json').flat_map do |json_file|
-        json = JSON.parse(File.read(json_file))
-
-        RouteHashCreator.new(json).create_route_hashes
-      end
-    end
 
     def dist_dir
       make_directory_if_it_does_not_exist('server')

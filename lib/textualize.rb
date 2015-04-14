@@ -15,5 +15,12 @@ module Textualize
       'server',
       'create a folder structure of json responses'
     )
+
+    register(
+      ::Textualize::HttpBackend,
+      'http_backend',
+      'http_backend',
+      'create an Angular 1.x module for stubbing backend responses'
+    )
   end
 end
