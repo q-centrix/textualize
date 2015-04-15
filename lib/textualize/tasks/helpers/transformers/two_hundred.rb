@@ -18,12 +18,18 @@ module Textualize
     private
 
     def fetch_example
-      response.
+      string_body = response.
         fetch('200').
         fetch('body').
         fetch('application/json').
         fetch('example')
+
+      JSON.parse(string_body)
     end
+
+    # def remove_links_and_included(body_hash)
+    #   body_hash.fetch('data').delete('links')
+    # end
 
   end
 end

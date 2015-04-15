@@ -3,7 +3,7 @@ angular.module('textualize_http_backend').run([
   function($httpBackend) {
     $httpBackend.whenGET('<%= url %>').respond(
       function(method, url, data, headers) {
-        return [<%= response_code %>, <%= body %>, {}]
+        return [<%= response_code %>, <%= body.to_json %>, {}]
       }
     );
   }

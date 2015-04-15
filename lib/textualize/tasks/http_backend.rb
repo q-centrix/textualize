@@ -1,4 +1,3 @@
-require 'json'
 require 'uglifier'
 require 'erb'
 

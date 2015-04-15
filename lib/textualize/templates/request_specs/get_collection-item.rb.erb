@@ -1,0 +1,14 @@
+require 'airborne'
+
+describe 'GET <%= url %>' do
+  let!(:<%= name %>) { create(:<%= name %>) }
+
+  it 'returns expected json' do
+    get "<%= url.split('{').first %>#{<%= name %>.id}"
+    expect_status <%= response_code %>
+    expect_json(
+      <%= body.to_json %>
+    )
+  end
+end
+

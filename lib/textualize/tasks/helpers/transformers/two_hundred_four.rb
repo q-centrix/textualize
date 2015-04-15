@@ -10,8 +10,6 @@ module Textualize
 
       transformed_hash[:response_code] = response.keys.first.to_s.to_i
 
-      transformed_hash[:body] = ''
-
       return transformed_hash
     end
 

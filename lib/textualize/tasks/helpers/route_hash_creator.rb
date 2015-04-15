@@ -24,8 +24,13 @@ module Textualize
       method_hashes = []
       method_hashes += resource.fetch('methods').map do |method|
         method_hash = Hashie::Mash.new
-        method_hash.verb = method.fetch('method')
-        method_hash.url = base_path + relative_path
+        method_hash.verb          = method.fetch('method')
+        method_hash.url           = base_path + relative_path
+        method_hash.relative_path = relative_path
+        method_hash.type          = resource.fetch('type').keys.first
+        method_hash.name          = relative_path.split('/').last.gsub(
+          /{|}|_id/, ''
+        )
         method_hash.merge!(transformed_response(method))
       end
 

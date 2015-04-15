@@ -11,6 +11,7 @@ module Textualize
 
     def create_method_files
       RouteHashes.hashes.each do |route_hash|
+        next unless route_hash.verb == 'get'
         next if route_hash.body.empty?
 
         route_directory = "#{dist_dir}#{route_hash.url}"
@@ -18,7 +19,7 @@ module Textualize
         make_directory_if_it_does_not_exist(route_directory)
 
         File.open("#{route_directory}/#{route_hash.verb}.json", 'w') do |file|
-          file.write route_hash.body
+          file.write route_hash.body.to_json
         end
       end
     end
