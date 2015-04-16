@@ -29,13 +29,9 @@ module Textualize
     end
 
     def dist_file
-      make_directory_if_it_does_not_exist('angular')
+      FileUtils.mkdir_p('angular')
 
       'angular/textualize_http_backend.min.js'
-    end
-
-    def make_directory_if_it_does_not_exist(directory)
-      FileUtils.mkdir_p(directory) unless File.directory? directory
     end
 
     def http_backend_template(route_hash)
