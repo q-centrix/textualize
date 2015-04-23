@@ -1,0 +1,10 @@
+angular.module('textualize_http_backend').run([
+  '$httpBackend',
+  function($httpBackend) {
+    $httpBackend.whenPATCH('<%= url %>').respond(
+      function(method, url, data, headers) {
+        return [<%= response_code %>, {}, {}]
+      }
+    );
+  }
+])

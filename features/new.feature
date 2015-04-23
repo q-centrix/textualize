@@ -15,7 +15,6 @@ Feature: Textualize CLI
       "name": "documentation",
       """
     And a file named "my-app/gulpfile.js" should exist
-    And a directory named "my-app/tasks" should exist
     And a file named "my-app/apis/api.raml" should exist
     And the output should contain "Thank you for installing textualize"
 

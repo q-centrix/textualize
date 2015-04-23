@@ -1,3 +1,5 @@
+require 'attr_extras'
+
 module Textualize
   class TwoHundred
 
@@ -6,7 +8,7 @@ module Textualize
     def transform
       transformed_hash = {}
 
-      transformed_hash[:response_code] = response.keys.first.to_s.to_i
+      transformed_hash[:response_code] = response.keys.first.to_i
 
       transformed_hash[:body] = fetch_example
 
@@ -17,10 +19,10 @@ module Textualize
 
     def fetch_example
       response.
-        fetch(:'200').
-        fetch(:'body').
-        fetch(:'application/json').
-        fetch(:'example')
+        fetch('200').
+        fetch('body').
+        fetch('application/json').
+        fetch('example')
     end
 
   end

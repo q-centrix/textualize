@@ -6,40 +6,40 @@ describe Textualize::RouteHashCreator do
   describe 'GET request' do
     let(:json_from_gulp_task) do
       {
-        "baseUri": "api/v1",
-        "resources": [
+        "baseUri" => "api/v1",
+        "resources" => [
           {
-            "description": "A read-only facility record",
-            "type": {
-              "item-ro": {
-                "exampleItem": "{\n  \"facility\" : {\n    \"id\": 1,\n    \"name\": \"Large Facility\",\n    \n  }\n}\n"
+            "description" => "A read-only facility record",
+            "type" => {
+              "item-ro" => {
+                "exampleItem" => "{\n  \"facility\" : {\n    \"id\": 1,\n    \"name\": \"Large Facility\",\n    \n  }\n}\n"
               }
             },
-            "relativeUri": "/facility",
-            "methods": [
+            "relativeUri" => "/facility",
+            "methods" => [
               {
-                "responses": {
-                  "200": {
-                    "body": {
-                      "application/json": {
-                        "example": "{\n  \"facility\" : {\n    \"id\": 1,\n    \"name\": \"Large Facility\",\n    \n  }\n}\n"
+                "responses" => {
+                  "200" => {
+                    "body" => {
+                      "application/json" => {
+                        "example" => "{\n  \"facility\" : {\n    \"id\": 1,\n    \"name\": \"Large Facility\",\n    \n  }\n}\n"
                       }
                     }
                   }
                 },
-                "protocols": [
+                "protocols" => [
                   "HTTPS"
                 ],
-                "method": "get",
-                "allUriParameters": []
+                "method" => "get",
+                "allUriParameters" => []
               }
             ],
-            "relativeUriPathSegments": [
+            "relativeUriPathSegments" => [
               "facility"
             ],
-            "parentUrl": "",
-            "uniqueId": "_facility",
-            "allUriParameters": []
+            "parentUrl" => "",
+            "uniqueId" => "_facility",
+            "allUriParameters" => []
           }
         ]
       }
@@ -47,12 +47,12 @@ describe Textualize::RouteHashCreator do
 
     it 'converts into simpler hash' do
       expect(subject.create_route_hashes).to eq [
-        {
+        Hashie::Mash.new(
           url: 'api/v1/facility',
           verb: 'get',
           response_code: 200,
           body: "{\n  \"facility\" : {\n    \"id\": 1,\n    \"name\": \"Large Facility\",\n    \n  }\n}\n"
-        }
+        )
       ]
     end
   end

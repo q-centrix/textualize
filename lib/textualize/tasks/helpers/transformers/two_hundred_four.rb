@@ -1,3 +1,5 @@
+require 'attr_extras'
+
 module Textualize
   class TwoHundredFour
 

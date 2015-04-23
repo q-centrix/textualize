@@ -24,7 +24,6 @@ textualize new <folder-name>
 The ``textualize new`` command creates sample documentation with the folder
 structure needed for the other commands.
 
-## TODO Tasks
 ### Server
 
 ```bash
@@ -34,34 +33,17 @@ textualize server
 The ``textualize server`` command creates a folder structure of JSON in the
 ``server`` folder.
 
-### Request Specs
+### HttpBackend
 
 ```bash
-textualize request_specs
+textualize http_backend
 ```
 
-The ``textualize request_specs`` command creates a folder of request specs
-using [rack-test](https://github.com/brynary/rack-test) and
-[rspec](https://github.com/rspec/rspec).
-
-### Seeds
-
-```bash
-textualize seeeds
-```
-
-The ``textualize seeds`` command creates a file that can be used as the
-``db/seeds.rb`` file in a rails app. It depends on ActiveRecord.
-
-### Angular Factories
-
-```bash
-textualize angular_factories
-```
-
-The ``textualize angular_factories`` command creates a folder of Angular JS
-factories namespaced to a ``angular_factories`` module and written in
-Typescript.
+The ``textualize http_backend`` command creates a minified javascript file,
+``angular/textualize_http_backend.min.js`` that contains an angular module that
+can be injected to provide a stubbed
+[httpBackend](https://docs.angularjs.org/api/ngMockE2E/service/$httpBackend).
+This can be used in both e2e tests and for prototyping.
 
 ## Development
 
