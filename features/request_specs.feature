@@ -6,7 +6,11 @@ Feature: Textualize CLI
 
   Scenario: Creating the server folder
     When I set up Textualize and run "textualize request_specs"
-    Then the file "my-app/request_specs/get_recipies.rb" should contain:
+    Then the file "my-app/dist/spec/requests/get_items_spec.rb" should contain:
     """
-    describe 'GET recipies'
+    describe 'GET /items'
+    """
+    Then the file "my-app/dist/spec/requests/post_items_spec.rb" should contain:
+    """
+    describe 'POST /items'
     """

@@ -1,0 +1,13 @@
+require 'airborne'
+
+describe 'POST <%= url %>' do
+  before do
+    add_header_tokens(<%= secured_by %>)
+  end
+
+  it 'returns the saved record' do
+    post "<%= url %>"
+    expect_status <%= response_code %>
+  end
+end
+
