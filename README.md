@@ -34,7 +34,7 @@ textualize server
 ```
 
 The ``textualize server`` command creates a folder structure of JSON in the
-``server`` folder.
+``dist/server`` folder.
 
 ### HttpBackend
 
@@ -43,7 +43,7 @@ textualize http_backend
 ```
 
 The ``textualize http_backend`` command creates a minified javascript file,
-``angular/textualize_http_backend.min.js`` that contains an angular module that
+``dist/angular/backend/fake_http_backend.min.js`` that contains an angular module that
 can be injected to provide a stubbed
 [httpBackend](https://docs.angularjs.org/api/ngMockE2E/service/$httpBackend).
 This can be used in both e2e tests and for prototyping.
@@ -55,9 +55,10 @@ textualize request_specs
 ```
 
 The ``textualize request_specs`` command creates a folder of request specs
-written in [airborne](https://github.com/brooklynDev/airborne) that can be used
-writing ruby apps with Rack. It is recommended that tests are run in isolation
-while developing, and as a suite in continuous integration.
+written in [airborne](https://github.com/brooklynDev/airborne) at 
+``dist/spec/request_specs`` that can be used writing ruby apps with Rack. 
+It is recommended that tests are run in isolation while developing, and 
+as a suite in continuous integration.
 
 ## Development
 
