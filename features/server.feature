@@ -6,7 +6,7 @@ Feature: Textualize CLI
 
   Scenario: Creating the server folder
     When I set up Textualize and run "textualize server"
-    Then the file "my-app/server/recipies/index.json" should contain:
+    Then the file "dist/server/api/v1/items/get.json" should contain:
     """
-    "recipies":
+    "data":
     """

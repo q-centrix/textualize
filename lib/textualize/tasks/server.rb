@@ -16,7 +16,7 @@ module Textualize
 
         route_directory = "#{dist_dir}#{route_hash.url}"
 
-        make_directory_if_it_does_not_exist(route_directory)
+        FileUtils.mkdir_p(route_directory)
 
         File.open("#{route_directory}/#{route_hash.verb}.json", 'w') do |file|
           file.write route_hash.body.to_json
@@ -27,13 +27,9 @@ module Textualize
     private
 
     def dist_dir
-      make_directory_if_it_does_not_exist('server')
+      FileUtils.mkdir_p('dist/server')
 
-      'server'
-    end
-
-    def make_directory_if_it_does_not_exist(directory)
-      FileUtils.mkdir_p(directory) unless File.directory? directory
+      'dist/server'
     end
   end
 end

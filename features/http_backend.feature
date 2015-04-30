@@ -6,7 +6,7 @@ Feature: Textualize CLI
 
   Scenario: Creating the server folder
     When I set up Textualize and run "textualize http_backend"
-    Then the file "my-app/server/angular/http_backend.min.js" should contain:
+    Then the file "my-app/dist/angular/http_backend.min.js" should contain:
     """
     angular.module
     """

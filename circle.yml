@@ -1,3 +1,7 @@
+dependencies:
+  post:
+    - npm install -g gulp
+
 test:
   override:
     - bundle exec rspec spec
