@@ -1,0 +1,8 @@
+type:
+  collection-ro:
+    exampleCollection: !include ../samples/items.json
+    exampleItem:       !include ../samples/item.json
+/{item_id}:
+  type:
+    collection-item-ro:
+      exampleItem: !include ../samples/item.json

@@ -1,0 +1,28 @@
+GIT
+  remote: git@github.com:currica/textualize.git
+  revision: 5d6a9915dcd5c62e88d12b8b298b58b8ab22d1a9
+  branch: request_specs
+  specs:
+    textualize (0.1.0)
+      attr_extras (~> 4)
+      hashie (~> 3)
+      thor (~> 0)
+      uglifier (~> 2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    attr_extras (4.4.0)
+    execjs (2.5.2)
+    hashie (3.4.1)
+    json (1.8.2)
+    thor (0.19.1)
+    uglifier (2.7.1)
+      execjs (>= 0.3.0)
+      json (>= 1.8.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  textualize!

@@ -1,0 +1,6 @@
+400: !include ./responses/400.yaml
+401: !include ./responses/401.yaml
+403: !include ./responses/403.yaml
+404: !include ./responses/404.yaml
+422: !include ./responses/422.yaml
+500: !include ./responses/500.yaml

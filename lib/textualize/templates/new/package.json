@@ -1,5 +1,5 @@
 {
-  "name": "documentation",
+  "name": "api-documentation",
   "version": "0.0.1",
   "description": "RAML documentation and gulp tasks for test/http stub files",
   "main": "gulpfile.js",
@@ -11,7 +11,10 @@
     "url": ""
   },
   "author": "",
-  "license": "",
+  "license": "Copyright by the contributors of the master branch of this repository",
+  "bugs": {
+    "url": ""
+  },
   "homepage": "",
   "dependencies": {
     "gulp": "^3.8.11",

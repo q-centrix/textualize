@@ -1,0 +1,18 @@
+collection-ro:
+  description: Read-only collection of available <<resourcePathName>>
+
+  get:
+    securedBy: [ oauth_2_0: { scopes: [ "staff" ] } ]
+    responses:
+      200:
+        body:
+          application/json:
+            example: <<exampleCollection>>
+
+  post:
+    securedBy: [ oauth_2_0: { scopes: [ "staff" ] } ]
+    body:
+      application/json:
+        schema: <<resourcePathName|!singularize>>
+    responses:
+      200: !include ../responses/200.yaml

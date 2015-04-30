@@ -1,2 +1,5 @@
-.tmp
 node_modules
+.tmp
+dist
+angular
+server

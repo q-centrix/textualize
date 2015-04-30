@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://jsonschema.net",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Person who placed the order"
+    },
+    "order_ids": {
+      "type": "array",
+      "orders_id": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "required": [
+      "user_id"
+    ]
+  }
+}

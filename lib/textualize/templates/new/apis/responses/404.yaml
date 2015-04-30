@@ -1,0 +1,4 @@
+body:
+  application/json:
+    example: |
+      { "message": "Not found" }
