@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split("\n").reject do |file|
-    file.match(%r{^(test|spec|features)/})
+    file.match(%r{^(spec|features)/})
   end
   spec.executables   = spec.files.grep(%r{^bin/}) do |file|
     File.basename(file)
