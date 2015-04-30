@@ -8,9 +8,9 @@ Feature: Textualize CLI
     When I set up Textualize and run "textualize request_specs"
     Then the file "my-app/dist/spec/requests/get_items_spec.rb" should contain:
     """
-    describe 'GET /items'
+    describe 'GET /api/v1/items'
     """
     Then the file "my-app/dist/spec/requests/post_items_spec.rb" should contain:
     """
-    describe 'POST /items'
+    describe 'POST /api/v1/items'
     """
