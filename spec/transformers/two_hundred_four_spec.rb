@@ -15,8 +15,7 @@ describe Textualize::TwoHundredFour do
     specify do
       expect(subject.transform).to eq(
         {
-          response_code: 204,
-          body: ''
+          response_code: 204
         }
       )
     end
