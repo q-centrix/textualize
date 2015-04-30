@@ -46,6 +46,5 @@ module Textualize
     def template_directory
       __dir__.chomp('tasks') + 'templates/request_specs/'
     end
-
   end
 end

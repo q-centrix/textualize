@@ -26,10 +26,5 @@ module Textualize
 
       JSON.parse(string_body)
     end
-
-    # def remove_links_and_included(body_hash)
-    #   body_hash.fetch('data').delete('links')
-    # end
-
   end
 end
