@@ -18,12 +18,13 @@ module Textualize
     private
 
     def fetch_example
-      response.
+      string_body = response.
         fetch('200').
         fetch('body').
         fetch('application/json').
         fetch('example')
-    end
 
+      JSON.parse(string_body)
+    end
   end
 end

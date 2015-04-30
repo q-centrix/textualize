@@ -1,0 +1,8 @@
+body:
+  application/json:
+    example: |
+      {
+        name: [
+          "has already been taken"
+        ]
+      }

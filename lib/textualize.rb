@@ -22,5 +22,12 @@ module Textualize
       'http_backend',
       'create an Angular 1.x module for stubbing backend responses'
     )
+
+    register(
+      ::Textualize::RequestSpecs,
+      'request_specs',
+      'request_specs',
+      'create requset specs using airborne'
+    )
   end
 end

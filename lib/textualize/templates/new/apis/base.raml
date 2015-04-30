@@ -1,0 +1,26 @@
+#%RAML 0.8
+---
+title: Menu API
+version: v1
+baseUri: https://app.my-awesome-restaurant.com/api/{version}
+mediaType: application/json
+
+documentation:
+  - title: HTTP Status Codes
+    content: !include ./documentation/http_statuses.md
+
+securitySchemes:
+  - oauth_2_0: !include ./documentation/authentication.yaml
+
+schemas:
+  - items: !include ./base/schemas/item.json
+  - orders: !include ./base/schemas/order.json
+
+resourceTypes:
+  - !include ./resourceTypes/collection.yaml
+  - !include ./resourceTypes/collection-ro.yaml
+  - !include ./resourceTypes/collection-item.yaml
+  - !include ./resourceTypes/collection-item-ro.yaml
+
+/items: !include ./base/routes/items.yaml
+/orders: !include ./base/routes/orders.yaml

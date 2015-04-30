@@ -11,15 +11,16 @@ Gem::Specification.new do |spec|
 
   spec.summary       = 'Turn Documentation into Tests and More'
   spec.description   = <<-DESCRIPTION
-    Textualize currently supports converting RAML documentation into rack-test
-    request specs, angular js factories, and rails seeding
+    Textualize uses RAML for documentation and comes with scripts to generate
+    template files that can be used to fulfill an implementation of your
+    documentation.
   DESCRIPTION
 
   spec.homepage      = 'https://github.com/q-centrix/textualize'
-  spec.license       = 'Proprietary'
+  spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split("\n").reject do |file|
-    file.match(%r{^(test|spec|features)/})
+    file.match(%r{^(spec|features)/})
   end
   spec.executables   = spec.files.grep(%r{^bin/}) do |file|
     File.basename(file)

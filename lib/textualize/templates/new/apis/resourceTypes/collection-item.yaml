@@ -1,0 +1,20 @@
+collection-item:
+  description: Entity representing a <<resourcePathName|!singularize>>
+
+  get:
+    securedBy: [ oauth_2_0: { scopes: [ "customer", "staff" ] } ]
+    description: Get the <<resourcePathName|!singularize>> by ID
+    responses:
+      200: !include ../responses/200.yaml
+
+  patch:
+    securedBy: [ oauth_2_0: { scopes: [ "customer", "staff" ] } ]
+    description: Update the <<resourcePathName|!singularize>> by ID
+    responses:
+      204: !include ../responses/204.yaml
+
+  delete:
+    securedBy: [ oauth_2_0: { scopes: [ "customer", "staff" ] } ]
+    description: Remove the <<resourcePathName|!singularize>> by ID
+    responses:
+      204: !include ../responses/204.yaml

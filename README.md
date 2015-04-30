@@ -45,6 +45,17 @@ can be injected to provide a stubbed
 [httpBackend](https://docs.angularjs.org/api/ngMockE2E/service/$httpBackend).
 This can be used in both e2e tests and for prototyping.
 
+### Request Specs
+
+```bash
+textualize request_specs
+```
+
+The ``textualize request_specs`` command creates a folder of request specs
+written in [airborne](https://github.com/brooklynDev/airborne) that can be used
+writing ruby apps with Rack. It is recommended that tests are run in isolation
+while developing, and as a suite in continuous integration.
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run

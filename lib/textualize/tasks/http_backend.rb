@@ -1,4 +1,3 @@
-require 'json'
 require 'uglifier'
 require 'erb'
 
@@ -29,9 +28,9 @@ module Textualize
     end
 
     def dist_file
-      FileUtils.mkdir_p('angular')
+      FileUtils.mkdir_p('dist/angular/backend')
 
-      'angular/textualize_http_backend.min.js'
+      'dist/angular/backend/fake_http_backend.min.js'
     end
 
     def http_backend_template(route_hash)
