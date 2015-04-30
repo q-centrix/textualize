@@ -1,5 +1,8 @@
 # Textualize
 
+[![Circle
+CI](https://circleci.com/gh/q-centrix/textualize.svg?style=svg)](https://circleci.com/gh/q-centrix/textualize)
+
 A documentation template written in RAML and thor tasks to turn documentation
 into so much more.
 
