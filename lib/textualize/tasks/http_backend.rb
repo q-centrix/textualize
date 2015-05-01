@@ -46,6 +46,9 @@ module Textualize
 
     def append_uglified_hashes
       RouteHashes.hashes.each do |route_hash|
+        # replace sample ids with 1
+        route_hash.relative_path.gsub!(/{.*}/, '1')
+
         File.open(dist_file, 'a') do |file|
           file.write(
             Uglifier.compile(
