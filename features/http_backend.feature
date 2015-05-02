@@ -8,6 +8,6 @@ Feature: Textualize CLI
     When I set up Textualize and run "textualize http_backend"
     Then the file "my-app/dist/angular/backend/fake_http_backend.min.js" should contain:
     """
-    /items/1
+    whenGET("/api/v1/items/1")
     """
 
