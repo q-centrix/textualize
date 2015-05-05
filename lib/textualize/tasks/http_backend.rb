@@ -19,9 +19,7 @@ module Textualize
     def create_basic_http_backend_file
       File.open(dist_file, 'w') do |file|
         file.write(
-          Uglifier.compile(
-            File.read("#{template_directory}/module.js")
-          )
+          File.read("#{template_directory}/module.js")
         )
       end
     end
