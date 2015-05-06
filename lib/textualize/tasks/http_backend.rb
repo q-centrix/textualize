@@ -1,4 +1,3 @@
-require 'uglifier'
 require 'erb'
 
 module Textualize
@@ -20,9 +19,7 @@ module Textualize
     def create_basic_http_backend_file
       File.open(dist_file, 'w') do |file|
         file.write(
-          Uglifier.compile(
-            File.read("#{template_directory}/module.js")
-          )
+          File.read("#{template_directory}/module.js")
         )
       end
     end
@@ -47,13 +44,13 @@ module Textualize
     def append_uglified_hashes
       RouteHashes.hashes.each do |route_hash|
         # replace sample ids with 1
-        route_hash.relative_path.gsub!(/{.*}/, '1')
+        modified_hash = route_hash
+        modified_hash.relative_path.gsub!(/{.*}/, '1')
+        modified_hash.url.gsub!(/{.*}/, '1')
 
         File.open(dist_file, 'a') do |file|
           file.write(
-            Uglifier.compile(
-              http_backend_template(route_hash)
-            )
+            http_backend_template(modified_hash)
           )
         end
       end
