@@ -24,7 +24,15 @@ module Textualize
       method_hashes = []
       method_hashes += resource.fetch('methods').map do |method|
         method_hash = Hashie::Mash.new
+
         method_hash.verb          = method.fetch('method')
+
+        if method_hash.verb == 'post'
+          method_hash.schema = method.fetch('body').
+            fetch('application/json').
+            fetch('schema')
+        end
+
         method_hash.url           = base_path + relative_path
         method_hash.relative_path = relative_path
         method_hash.type          = resource.fetch('type').keys.first

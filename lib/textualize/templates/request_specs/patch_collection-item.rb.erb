@@ -1,0 +1,14 @@
+require 'airborne'
+
+describe 'PATCH <%= url %>' do
+  let!(:<%= name %>) { create(:<%= name %>) }
+
+  before do
+    add_header_tokens(<%= secured_by %>)
+  end
+
+  it 'returns expected json' do
+    patch "<%= url %>"
+    expect_status <%= response_code %>
+end
+

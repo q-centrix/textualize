@@ -6,7 +6,13 @@ describe 'POST <%= url %>' do
   end
 
   it 'returns the saved record' do
-    post "<%= url %>"
+    post "<%= url %>", {
+      <%= properties = JSON.parse(schema).fetch('properties');
+      properties.fetch('required').map { |required_param|
+        "\"#{required_param}\" => "\
+          "\"#{properties.fetch(required_param).fetch('type')}\""
+      }.join("\n") %>
+    }
     expect_status <%= response_code %>
   end
 end
