@@ -42,7 +42,6 @@ module Textualize
     end
 
     def append_uglified_hashes
-      byebug
       RouteHashes.hashes.each do |route_hash|
         # replace sample ids with 1
         modified_hash = route_hash
