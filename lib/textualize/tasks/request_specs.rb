@@ -20,10 +20,17 @@ module Textualize
 
     def add_airborne_specs
       RouteHashes.hashes.each do |route_hash|
+
+        # replace sample ids with interpolated ruby
+        modified_hash = route_hash
+
+        modified_hash.relative_path.gsub!(/({|_id)/, '{' => '#{', '_id' => '.id')
+        modified_hash.url.gsub!(/({|_id)/, '{' => '#{', '_id' => '.id')
+
         File.open(
           "#{RS_DIRECTORY}#{route_hash.verb}_#{route_hash.name}_spec.rb", 'w'
         ) do |file|
-          file.write(request_spec_template(route_hash))
+          file.write(request_spec_template(modified_hash))
         end
       end
     end

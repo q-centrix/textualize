@@ -13,8 +13,8 @@ securitySchemes:
   - oauth_2_0: !include ./documentation/authentication.yaml
 
 schemas:
-  - items: !include ./base/schemas/item.json
-  - orders: !include ./base/schemas/order.json
+  - item: !include ./base/schemas/item.json
+  - order: !include ./base/schemas/order.json
 
 resourceTypes:
   - !include ./resourceTypes/collection.yaml
