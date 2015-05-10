@@ -3,14 +3,13 @@ require 'airborne'
 describe 'GET <%= url %>' do
   let!(:<%= name %>) { create(:<%= name %>) }
 
-  before do
-    add_header_tokens(<%= secured_by %>)
-  end
-
-  it 'returns expected json' do
-    get "<%= url %>"
-    expect_status <%= response_code %>
-    expect_json_keys <%= body.data.keys %>
+  <%= secured_by %>.each do |role|
+    it "returns expected json for #{role} role" do
+      add_header_token role
+      get "<%= url %>"
+      expect_status <%= response_code %>
+      expect_json_keys <%= body.data.keys %>
+    end
   end
 end
 
