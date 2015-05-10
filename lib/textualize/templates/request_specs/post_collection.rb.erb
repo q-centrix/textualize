@@ -1,19 +1,18 @@
 require 'airborne'
 
 describe 'POST <%= url %>' do
-  before do
-    add_header_tokens(<%= secured_by %>)
-  end
 
-  it 'returns the saved record' do
-    post "<%= url %>", {
-      <%= properties = JSON.parse(schema).fetch('properties');
-      properties.fetch('required').map { |required_param|
-        "\"#{required_param}\" => "\
-          "\"#{properties.fetch(required_param).fetch('type')}\""
-      }.join("\n") %>
-    }
-    expect_status <%= response_code %>
+  <%= secured_by %>.each do |role|
+    it "returns the saved record for #{role} role" do
+      post "<%= url %>", {
+        <%= properties = JSON.parse(schema).fetch('properties');
+        properties.fetch('required').map { |required_param|
+          "\"#{required_param}\" => "\
+            "\"#{properties.fetch(required_param).fetch('type')}\""
+        }.join("\n") %>
+      }
+      expect_status <%= response_code %>
+    end
   end
 end
 

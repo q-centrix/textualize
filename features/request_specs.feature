@@ -10,7 +10,11 @@ Feature: Textualize CLI
     """
     describe 'GET /api/v1/items'
     """
-    Then the file "my-app/dist/spec/requests/post_items_spec.rb" should contain:
+    And the file "my-app/dist/spec/requests/post_items_spec.rb" should contain:
     """
     describe 'POST /api/v1/items'
+    """
+    And the file "my-app/dist/spec/requests/delete_item_spec.rb" should contain:
+    """
+    ["staff"]
     """

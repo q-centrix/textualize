@@ -3,13 +3,12 @@ require 'airborne'
 describe 'DELETE <%= url %>' do
   let!(:<%= name %>) { create(:<%= name %>) }
 
-  before do
-    add_header_tokens(<%= secured_by %>)
-  end
-
-  it 'returns expected json' do
-    delete "<%= url %>"
-    expect_status <%= response_code %>
+  <%= secured_by %>.each do |role|
+    it "returns expected json for #{role} role" do
+      add_header_token role
+      delete "<%= url %>"
+      expect_status <%= response_code %>
+    end
   end
 end
 

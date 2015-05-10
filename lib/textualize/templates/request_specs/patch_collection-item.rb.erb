@@ -3,12 +3,11 @@ require 'airborne'
 describe 'PATCH <%= url %>' do
   let!(:<%= name %>) { create(:<%= name %>) }
 
-  before do
-    add_header_tokens(<%= secured_by %>)
+  <%= secured_by %>.each do |role|
+    it "returns expected json for #{role} role" do
+      add_header_token role
+      patch "<%= url %>"
+      expect_status <%= response_code %>
+    end
   end
-
-  it 'returns expected json' do
-    patch "<%= url %>"
-    expect_status <%= response_code %>
 end
-
