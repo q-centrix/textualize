@@ -16,5 +16,7 @@ Feature: Textualize CLI
       """
     And a file named "my-app/gulpfile.js" should exist
     And a file named "my-app/apis/base.raml" should exist
+    And a file named "my-app/circle.yml" should exist
+    And a file named "my-app/Dockerfile" should exist
     And the output should contain "Thank you for installing textualize"
 
