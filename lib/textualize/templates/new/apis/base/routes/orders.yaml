@@ -4,5 +4,5 @@ type:
     exampleItem:       !include ../samples/order.json
 /{order_id}:
   type:
-    collection-item-ro:
+    item-ro:
       exampleItem: !include ../samples/order.json
