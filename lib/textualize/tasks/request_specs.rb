@@ -21,11 +21,7 @@ module Textualize
     def add_airborne_specs
       RouteHashes.hashes.each do |route_hash|
 
-        # replace sample ids with interpolated ruby
-        modified_hash = route_hash
-
-        modified_hash.relative_path.gsub!(/({|_id)/, '{' => '#{', '_id' => '.id')
-        modified_hash.url.gsub!(/({|_id)/, '{' => '#{', '_id' => '.id')
+        modified_hash = replace_ids_with_interpolated_ruby(route_hash)
 
         File.open(
           "#{RS_DIRECTORY}#{route_hash.verb}_#{route_hash.name}_spec.rb", 'w'
@@ -50,6 +46,13 @@ module Textualize
 
     def non_ro_type(route_hash)
       route_hash.type.gsub(/-ro$/, '')
+    end
+
+    def replace_ids_with_interpolated_ruby(route_hash)
+      modified_hash = route_hash
+      modified_hash.relative_path.gsub!(/({|_id)/, '{' => '#{', '_id' => '.id')
+      modified_hash.url.gsub!(/({|_id)/, '{' => '#{', '_id' => '.id')
+      modified_hash
     end
   end
 end
