@@ -2,6 +2,9 @@ dependencies:
   override:
     - npm install
     - npm install --global gulp
+    - sudo apt-get -y update; sudo apt-get -y install jq
 test:
   override:
     - gulp
+    - cat apis/*/samples/*.json | jq '.data'
+
