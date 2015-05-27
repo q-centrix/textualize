@@ -4,29 +4,31 @@ module Textualize
   class RequestSpecs < Thor::Group
     include Thor::Actions
 
-    RS_DIRECTORY = 'dist/spec/requests/'
-
     desc(
       'Creates request specs for an api using airborne, a ruby gem'
     )
 
     def create_airborne_specs
-      FileUtils.mkdir_p(RS_DIRECTORY)
-
       add_airborne_specs
     end
 
     private
 
     def add_airborne_specs
-      RouteHashes.hashes.each do |route_hash|
+      RouteHashes.filenames_and_hashes.each do |(filename, hashes)|
+        request_directory = "dist/#{filename}/spec/requests/"
 
-        modified_hash = replace_ids_with_interpolated_ruby(route_hash)
+        FileUtils.mkdir_p(request_directory)
 
-        File.open(
-          "#{RS_DIRECTORY}#{route_hash.verb}_#{route_hash.name}_spec.rb", 'w'
-        ) do |file|
-          file.write(request_spec_template(modified_hash))
+        hashes.each do |route_hash|
+          modified_hash = replace_ids_with_interpolated_ruby(route_hash)
+
+          File.open(
+            "#{request_directory}#{route_hash.verb}_"\
+            "#{route_hash.name}_spec.rb", 'w'
+          ) do |file|
+            file.write(request_spec_template(modified_hash))
+          end
         end
       end
     end

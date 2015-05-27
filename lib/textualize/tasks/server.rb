@@ -10,26 +10,28 @@ module Textualize
     )
 
     def create_method_files
-      RouteHashes.hashes.each do |route_hash|
-        next unless route_hash.verb == 'get'
-        next if route_hash.body.empty?
+      RouteHashes.filenames_and_hashes.each do |(filename, hashes)|
+        FileUtils.mkdir_p("dist/#{filename}/server")
 
-        route_directory = "#{dist_dir}#{route_hash.url}"
+        hashes.each do |route_hash|
+          next unless route_hash.verb == 'get'
+          next if route_hash.body.empty?
 
-        FileUtils.mkdir_p(route_directory)
+          route_directory = "#{dist_dir(filename)}#{route_hash.url}"
 
-        File.open("#{route_directory}/#{route_hash.verb}.json", 'w') do |file|
-          file.write route_hash.body.to_json
+          FileUtils.mkdir_p(route_directory)
+
+          File.open("#{route_directory}/#{route_hash.verb}.json", 'w') do |file|
+            file.write route_hash.body.to_json
+          end
         end
       end
     end
 
     private
 
-    def dist_dir
-      FileUtils.mkdir_p('dist/server')
-
-      'dist/server'
+    def dist_dir(filename)
+      "dist/#{filename}/server"
     end
   end
 end

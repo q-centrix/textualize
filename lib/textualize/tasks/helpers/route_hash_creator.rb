@@ -26,6 +26,12 @@ module Textualize
         method_hash = Hashie::Mash.new
 
         method_hash.verb          = method.fetch('method')
+        method_hash.url           = base_path + relative_path
+        method_hash.relative_path = relative_path
+        method_hash.type          = resource.fetch('type').keys.first
+        method_hash.name          = relative_path.split('/').last.gsub(
+          /{|}|_id/, ''
+        )
 
         if method_hash.verb == 'post'
           method_hash.schema = method.fetch('body').
@@ -33,14 +39,11 @@ module Textualize
             fetch('schema')
         end
 
-        method_hash.url           = base_path + relative_path
-        method_hash.relative_path = relative_path
-        method_hash.type          = resource.fetch('type').keys.first
-        method_hash.secured_by    = method.fetch('securedBy').first.
-          fetch('oauth_2_0').fetch('scopes')
-        method_hash.name          = relative_path.split('/').last.gsub(
-          /{|}|_id/, ''
-        )
+        if method.has_key?('securedBy')
+          method_hash.secured_by = method.fetch('securedBy').first.
+            fetch('oauth_2_0').fetch('scopes')
+        end
+
         method_hash.merge!(transformed_response(method))
       end
 
